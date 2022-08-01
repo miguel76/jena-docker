@@ -14,7 +14,7 @@
 #   limitations under the License.
 
 
-FROM openjdk:11-jre-slim-buster
+FROM openjdk:11
 MAINTAINER Stian Soiland-Reyes <stain@apache.org>
 
 ENV LANG C.UTF-8
@@ -81,7 +81,7 @@ COPY load.sh $FUSEKI_HOME/
 COPY tdbloader $FUSEKI_HOME/
 COPY tdbloader2 $FUSEKI_HOME/
 RUN chmod 755 $FUSEKI_HOME/load.sh $FUSEKI_HOME/tdbloader $FUSEKI_HOME/tdbloader2
-#VOLUME /staging
+VOLUME /staging
 
 
 # Where we start our server from

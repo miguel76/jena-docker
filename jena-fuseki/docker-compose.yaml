@@ -1,0 +1,16 @@
+version: '3.0'
+services:
+  fuseki:
+    environment:
+      - TDB=2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fuseki
+    ports:
+      - "3030:3030"
+    volumes:
+      - fuseki-data:/fuseki
+      - ./staging:/staging
+volumes:
+  fuseki-data:
